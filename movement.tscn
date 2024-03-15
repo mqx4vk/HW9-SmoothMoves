@@ -7,7 +7,7 @@
 size = Vector2(128, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ybl0w"]
-size = Vector2(640, 64)
+size = Vector2(1152, 64)
 
 [node name="Node2D" type="Node2D"]
 
@@ -15,6 +15,10 @@ size = Vector2(640, 64)
 position = Vector2(464, 272)
 script = ExtResource("2_4kdgd")
 jump_coefficient = 2000.0
+x_speed = 100.0
+x_air_coefficient = 0.5
+x_speed_limit = 400.0
+x_friction = 0.2
 
 [node name="Icon" type="Sprite2D" parent="CharacterBody2D"]
 texture = ExtResource("1_gplxr")
@@ -26,8 +30,9 @@ shape = SubResource("RectangleShape2D_klhq5")
 position = Vector2(472, 392)
 
 [node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
-position = Vector2(-193.6, 48)
-scale = Vector2(1.46667, 1)
+position = Vector2(-431.68, 48)
+scale = Vector2(2.64, 1)
+color = Color(0.164706, 0.419608, 0.196078, 1)
 polygon = PackedVector2Array(-15.2727, -56, 421.091, -56, 421.091, 8, -15.2727, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]

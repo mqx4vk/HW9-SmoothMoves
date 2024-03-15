@@ -1,3 +1,2 @@
-res://movement.tscn
-res://jump.gd
 res://MoveCharacter.gd
+res://movement.tscn
