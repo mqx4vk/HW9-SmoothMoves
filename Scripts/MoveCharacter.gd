@@ -16,19 +16,24 @@ func _get_input():
 	if is_on_floor():
 		if Input.is_action_pressed("move_left"):
 			velocity += Vector2(-movement_speed,0)
+
 		if Input.is_action_pressed("move_right"):
 			velocity += Vector2(movement_speed,0)
+
 		if Input.is_action_just_pressed("jump"): # Jump only happens when we're on the floor (unless we want a double jump, but we won't use that here)
 			velocity += Vector2(1,-jump_height)
+
 	if not is_on_floor():
 		if Input.is_action_pressed("move_left"):
 			velocity += Vector2(-movement_speed * horizontal_air_coefficient,0)
+
 		if Input.is_action_pressed("move_right"):
 			velocity += Vector2(movement_speed * horizontal_air_coefficient,0)
 
 func _limit_speed():
 	if velocity.x > speed_limit:
 		velocity = Vector2(speed_limit, velocity.y)
+
 	if velocity.x < -speed_limit:
 		velocity = Vector2(-speed_limit, velocity.y)
 

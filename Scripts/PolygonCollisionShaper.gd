@@ -1,5 +1,5 @@
 @tool
-extends StaticBody2D
+extends Node2D
 
 @onready var polygon2D = $Polygon2D
 @onready var collision_polygon_2D = $CollisionPolygon2D
@@ -15,3 +15,5 @@ func _process(delta):
 	if collision_polygon_2D.polygon != polygon2D.polygon:
 		collision_polygon_2D.polygon = polygon2D.polygon
 	pass
+
+

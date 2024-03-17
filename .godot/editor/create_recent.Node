@@ -1,5 +1,8 @@
+RichTextLabel
+CollisionPolygon2D
 Polygon2D
-ColorRect
 CollisionShape2D
+Area2D
+ColorRect
 StaticBody2D
 CharacterBody2D
