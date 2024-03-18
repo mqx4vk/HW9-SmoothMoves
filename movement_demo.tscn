@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvov3cd6ck38d"]
+[gd_scene load_steps=6 format=3 uid="uid://bvov3cd6ck38d"]
 
 [ext_resource type="Script" path="res://Scripts/MoveCharacter.gd" id="1_mk64b"]
+[ext_resource type="Script" path="res://Scripts/DeadlyArea.gd" id="1_xqe81"]
 [ext_resource type="Texture2D" uid="uid://5n4fe0v0umjv" path="res://icon.svg" id="2_atlvx"]
 [ext_resource type="Script" path="res://Scripts/PolygonCollisionShaper.gd" id="3_ho3wj"]
 
@@ -8,6 +9,7 @@
 size = Vector2(44, 44)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_xqe81")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(424, 368)
@@ -51,3 +53,16 @@ polygon = PackedVector2Array(63.68, 88, 447.68, 32, 375.68, 128, -0.320007, 176)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelPiece2"]
 position = Vector2(-431.68, 48)
 polygon = PackedVector2Array(63.68, 88, 447.68, 32, 375.68, 128, -0.320007, 176)
+
+[node name="Area2D3" type="Area2D" parent="."]
+position = Vector2(49, 706)
+script = ExtResource("3_ho3wj")
+
+[node name="Polygon2D" type="Polygon2D" parent="Area2D3"]
+color = Color(0.278431, 0, 0.278431, 1)
+polygon = PackedVector2Array(-587, -7, 1408, -15, 1403, 107, -578, 106)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D3"]
+polygon = PackedVector2Array(-587, -7, 1408, -15, 1403, 107, -578, 106)
+
+[connection signal="body_entered" from="Area2D3" to="." method="_on_area_2d_body_entered"]
